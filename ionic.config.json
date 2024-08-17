@@ -1,0 +1,7 @@
+{
+  "name": "KerzzApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
