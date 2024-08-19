@@ -1,0 +1,59 @@
+.filter-button {
+  --background-focused: none;
+  --background-activated: none;
+  font-size: 20px;
+}
+
+
+.greeting-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+ion-label {
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.search-bar {
+  margin-top: -10px;
+  margin-left: -10px;
+}
+
+.greeting-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+ion-button:hover {
+  border: none;
+}
+
+.red-background {
+  --background: none;
+}
+
+.black-icon {
+  color: red !important;
+  font-size: 24px;
+}
+
+
+ion-button:hover {
+  --background: none;
+  box-shadow: none;
+  transform: none;
+}
+
+
+
+
+
+
+
+
+
+

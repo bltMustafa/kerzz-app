@@ -1,0 +1,52 @@
+<ion-content>
+  <div *ngIf="error$ | async as error" class="error">
+    <p>Error: {{ error }}</p>
+  </div>
+
+  <div>
+    <span class="header-title">Restoranlar</span>
+  </div>
+
+  <div *ngIf="loading" class="loading">
+    <!-- Lazy Loading - test -->
+    <ion-spinner name="crescent"></ion-spinner>
+    <p>Yükleniyor...</p>
+  </div>
+
+  <div *ngIf="restaurants$ | async as restaurants">
+    <div *ngFor="let restaurant of restaurants">
+      <ion-card class="restaurant-card" (click)="navigateToStore(restaurant.id)">
+        <div class="image-container">
+          <img
+            [src]="restaurant.images[0]?.base64"
+            alt="{{ restaurant.title }}"
+            class="restaurant-image"
+          />
+          <span class="badge">%5 Orwi Puan</span>
+          <ion-icon
+            class="heart-icon"
+            [name]="isFavorite(restaurant.id) ? 'heart' : 'heart-outline'"
+            (click)="toggleFavorite(restaurant.id); $event.stopPropagation()"
+          ></ion-icon>
+          <div class="overlay">
+            <ion-card-title class="overlay-title">{{ restaurant.title }}</ion-card-title>
+            <p class="overlay-text">{{ restaurant.storeInfo.title }}</p>
+            <div class="icon-container">
+              <span class="time-icon">🕒 20 - 25 dk</span>
+              <span class="distance-icon">📍 30 KM</span>
+              <span class="price-icon">💰 Min. {{ restaurant.storeInfo.minOrderPrice }} TL</span>
+            </div>
+          </div>
+        </div>
+      </ion-card>
+    </div>
+
+    <!-- Infinite Scroll -->
+    <ion-infinite-scroll (ionInfinite)="loadMore($event)">
+      <ion-infinite-scroll-content
+        loadingSpinner="bubbles"
+        loadingText="Daha fazla yükleniyor..."
+      ></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </div>
+</ion-content>

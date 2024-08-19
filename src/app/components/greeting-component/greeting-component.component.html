@@ -1,0 +1,15 @@
+<ion-item lines="none" class="greeting-item">
+  <ion-label>
+     {{ greetingMessage }} Mustafa, <ion-icon [ios]="greetingIcon" [md]="greetingIcon" ></ion-icon>
+    <ion-label>Bugün ne yemek istersin?</ion-label>
+  </ion-label>
+</ion-item>
+<ion-item lines="none" class="search-bar">
+  <ion-searchbar
+    placeholder="Arama"
+    class="custom-searchbar"
+  ></ion-searchbar>  <ion-button fill="solid" shape="round" class="filter-button red-background">
+    <ion-icon name="filter-circle-sharp" class="black-icon"></ion-icon>
+  </ion-button>
+</ion-item>
+<app-restaurant-list> </app-restaurant-list>

@@ -1,0 +1,148 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button (click)="goBack()" style="color: red;"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Restoran</ion-title>
+    <ion-buttons slot="end">
+      <ion-button>
+        <ion-icon name="notifications-outline" slot="icon-only" style="color: black;"></ion-icon>
+      </ion-button>
+      <ion-button>
+        <ion-icon name="chatbubble-outline" slot="icon-only" style="color: black;"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="storeInfo$ | async as storeInfo">
+  <ion-card>
+    <img [src]="storeInfo.images[0]?.base64" alt="{{ storeInfo.storeInfo?.title }}" class="store-image">
+
+    <!-- Başlık ve Kalp İkonu -->
+    <ion-item lines="none">
+      <ion-thumbnail slot="start" class="store-thumbnail">
+        <img [src]="storeInfo.images[0]?.base64" alt="{{ storeInfo.storeInfo?.title }}">
+      </ion-thumbnail>
+      <ion-label>
+        <div class="store-header">
+          <h2>{{ storeInfo.title }}</h2>
+          <ion-icon name="heart-outline" class="heart-icon"></ion-icon>
+        </div>
+        <p class="status-open small-text">
+          Şuan Açık: {{ storeInfo.storeInfo?.workingHours[0]?.open }} - {{ storeInfo.storeInfo?.workingHours[0]?.close }}
+        </p>
+      </ion-label>
+    </ion-item>
+
+    <!-- İkonlar -->
+    <ion-grid class="store-icons">
+      <ion-row>
+        <ion-col>
+          <div class="icon-container">
+            <ion-icon name="time-outline"></ion-icon>
+            <p>20-25 dk</p>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="icon-container">
+            <ion-icon name="navigate-outline"></ion-icon>
+            <p>1.0 KM</p>
+          </div>
+        </ion-col>
+        <ion-col>
+          <div class="icon-container">
+            <ion-icon name="pricetag-outline"></ion-icon>
+            <p>Min. {{ storeInfo.storeInfo?.minOrderPrice }} TL</p>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-grid class="custom-grid">
+      <ion-row>
+        <ion-col size="4">
+          <div class="grid-button">
+            <ion-icon name="restaurant-outline"></ion-icon>
+            <p>Restorandayım</p>
+          </div>
+        </ion-col>
+        <ion-col size="4">
+          <div class="grid-button">
+            <ion-icon name="car-outline"></ion-icon>
+            <p>Paket Servis</p>
+          </div>
+        </ion-col>
+        <ion-col size="4">
+          <div class="grid-button">
+            <ion-icon name="time-outline"></ion-icon>
+            <p>Gel-Al</p>
+          </div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="4">
+          <div class="grid-button">
+            <ion-icon name="book-outline"></ion-icon>
+            <p>Rezervasyon</p>
+          </div>
+        </ion-col>
+        <ion-col size="4">
+          <div class="grid-button">
+            <ion-icon name="mail-outline"></ion-icon>
+            <p>İletişim</p>
+          </div>
+        </ion-col>
+        <ion-col size="4">
+          <div class="grid-button red-bg">
+            <div class="score">
+              <p>00,00</p>
+            </div>
+            <p class="points-text">Puanım</p>
+          </div>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+
+  <ion-card>
+    <ion-item lines="none">
+      <ion-label>
+        <h2>Kahve Hediyesi</h2>
+        <p>Her 5 kahve siparişinde bir kahve bizden hediye!</p>
+      </ion-label>
+    </ion-item>
+
+    <ion-item lines="none">
+      <ion-grid>
+        <ion-row class="progress-icons">
+          <ion-col size="auto">
+            <div class="progress-step active">
+              <ion-icon name="trophy-outline"></ion-icon>
+            </div>
+          </ion-col>
+          <ion-col size="auto">
+            <div class="progress-step">
+              <ion-icon name="trophy-outline"></ion-icon>
+            </div>
+          </ion-col>
+          <ion-col size="auto">
+            <div class="progress-step">
+              <ion-icon name="trophy-outline"></ion-icon>
+            </div>
+          </ion-col>
+          <ion-col size="auto">
+            <div class="progress-step">
+              <ion-icon name="trophy-outline"></ion-icon>
+            </div>
+          </ion-col>
+          <ion-col size="auto">
+            <div class="progress-step">
+              <ion-icon name="trophy-outline"></ion-icon>
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-card>
+</ion-content>

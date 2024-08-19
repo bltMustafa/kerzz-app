@@ -1,0 +1,155 @@
+
+
+ion-content {
+  --padding-top: 0px; /* Üstteki padding'i kaldırıyoruz */
+  margin-top: 0px; /* Olası margin değerlerini de kaldırıyoruz */
+}
+
+ion-card {
+  margin-top: 0px;
+  padding-top: 0px;
+}
+
+
+.store-image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.store-thumbnail {
+  --size: 56px;
+}
+
+.store-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.heart-icon {
+  font-size: 24px;
+  color: black;
+}
+
+.status-open {
+  background-color: #e0f7e0;
+  color: black;
+  padding: 2px 8px;
+  border-radius: 8px;
+  font-size: 12px;
+  display: inline-block;
+}
+
+.small-text {
+  font-size: 12px;
+}
+
+
+.store-icons ion-col {
+  text-align: center;
+  margin-top: -20px;
+}
+
+.icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -5px;
+}
+
+.icon-container ion-icon {
+  color: orangered;
+  margin-right: 5px;
+  font-size: 18px;
+}
+
+.custom-grid {
+  margin-top: -20px;
+}
+
+.icon-container p {
+  font-size: 14px;
+  color: #333;
+}
+
+.grid-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #f8f8f8;
+  padding: 10px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.grid-button p {
+  color: black;
+}
+
+.red-bg {
+  background-color: red;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  padding: 17px;
+}
+
+.score p {
+  margin: 0;
+  font-weight: bold;
+  font-size: 1.5em;
+  color: black;
+}
+
+.points-text {
+  margin-top: 5px;
+  font-size: 1.2em;
+  font-weight: normal;
+  color: white;
+}
+
+.grid-button ion-icon {
+  font-size: 2em;
+  margin-bottom: 8px;
+  margin-top: 3px;
+}
+
+.progress-icons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.progress-step {
+  background-color: #e0e0e0; /* Gri renk */
+  border-radius: 12px;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-step.active {
+  background-color: #d9534f; /* Kırmızı renk */
+  color: white;
+}
+
+.progress-step ion-icon {
+  font-size: 1.5em;
+  color: inherit;
+}
+
+.progress-text p {
+  font-size: 1.2em;
+  margin: 0;
+  color: #333;
+}
+
+
+
+
